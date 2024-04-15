@@ -1,0 +1,14 @@
+Resources:
+  GlueJob:
+    Type: AWS::Glue::Job
+    Properties:
+      Name: MyGlueJob  
+      Role: glue-trial-etl-delete
+      Command:
+        Name: glueetl
+        ScriptLocation: s3://bobbycodepipeline/scripts/codepipelinetrial.py
+      DefaultArguments:
+        "--TempDir": "s3://bobbycodepipeline/temp/"
+      GlueVersion: "4.0"
+      WorkerType: G.1X
+      NumberOfWorkers: 10
