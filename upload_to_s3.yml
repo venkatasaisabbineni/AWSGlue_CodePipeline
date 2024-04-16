@@ -1,13 +1,1 @@
-version: 0.2
-Resources:
-  MyS3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: bobbycodepipeline1
-phases:
-  install:
-    runtime-versions:
-      python: 3.11
-  build:
-    commands:
-      - aws s3 cp /Users/venkatasaisabbineni/Desktop/Glue and CodePipeline/script/codepipelinetrial.py s3://bobbycodepipeline/scripts/
+
