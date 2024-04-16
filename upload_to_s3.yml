@@ -1,4 +1,9 @@
 version: 0.2
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: bobbycodepipeline1
 phases:
   install:
     runtime-versions:
