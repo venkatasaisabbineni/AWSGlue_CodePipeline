@@ -31,7 +31,7 @@ unique_credit_card = df_removedna.select("Credit_Card_Type").distinct().rdd.map(
 for i in unique_credit_card:
     df_temp = df_removedna.filter(df_removedna["Credit_Card_Type"] == i)
     transformed_df = DynamicFrame.fromDF(df_temp, glueContext, f"dynamic_frame_{i}")
-    csv_path = f"s3://bobbycodepipeline/output/{i}_customer_data.csv"
+    csv_path = f"s3://bobbycodepipeline/output/{i}_customer_data"
     glueContext.write_dynamic_frame.from_options(
         frame=transformed_df,
         connection_type="s3",
